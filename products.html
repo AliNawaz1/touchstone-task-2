@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>North Star Bakery | Products</title>
 </head>
 <body>
@@ -25,26 +26,48 @@
             <h2>Breads</h2>
             <p>See our current bread options. Contact us for available varieties and pricing.</p>
             <p>Pricing range: Breads are between $5 and $9.</p>
+            <button type="button" data-favorite-button data-product-id="breads" aria-pressed="false">
+                Add Breads to favorites
+            </button>
         </section>
 
         <section>
             <h2>Pastries</h2>
             <p>See our current pastry options. Contact us for available varieties and pricing.</p>
             <p>Pricing range: Pastries are between $3 and $6.</p>
+            <button type="button" data-favorite-button data-product-id="pastries" aria-pressed="false">
+                Add Pastries to favorites
+            </button>
         </section>
 
         <section>
             <h2>Cakes</h2>
             <p>Ask us about current cakes and options for an event or special occasion.</p>
             <p>Pricing range: Custom cakes start around $30.</p>
+            <button type="button" data-favorite-button data-product-id="cakes" aria-pressed="false">
+                Add Cakes to favorites
+            </button>
         </section>
 
         <section>
             <h2>Signature Loaf</h2>
             <figure>
                 <img src="assets/bakery-signature-loaf_c.png" alt="North Star Bakery's Signature Loaf">
-                <figcaption>North Star Bakery's Signature Loaf. Contact the bakery for current details and availability.</figcaption>
+                <figcaption>
+                    North Star Bakery's Signature Loaf. Contact the bakery for current details and availability.
+                </figcaption>
             </figure>
+            <button type="button" data-favorite-button data-product-id="signature-loaf" aria-pressed="false">
+                Add Signature Loaf to favorites
+            </button>
+        </section>
+
+        <section aria-labelledby="favorites-heading">
+            <h2 id="favorites-heading">Your Favorite Products</h2>
+            <p id="favorite-status" aria-live="polite">
+                Save products here to keep track of items you may want to preorder.
+            </p>
+            <ul id="favorite-list"></ul>
         </section>
 
         <p>There is no online checkout. Contact us to ask a question or send a preorder request.</p>

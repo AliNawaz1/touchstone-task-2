@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>North Star Bakery | Contact</title>
 </head>
 <body>
@@ -24,42 +25,59 @@
         <section>
             <h2>Location and Hours</h2>
             <p>Address: We're at 123 Market Street in Fairview.</p>
-            <p>Hours: We're open Tuesday-Friday from 7 am- 5pm and Saturday-Sunday from 8am to 2pm. Closed on Monday</p>
+            <p>Hours: We're open Tuesday-Friday from 7 am-5 pm and Saturday-Sunday from 8 am to 2 pm. Closed on Monday.</p>
         </section>
 
         <section>
             <h2>Send an Inquiry or Preorder Request</h2>
-            <form action="#" method="post">
+            <form id="contact-form" action="#" method="post" novalidate>
                 <fieldset>
                     <legend>Contact and request information</legend>
 
                     <p>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <input type="text" id="name" name="name"
+                               autocomplete="name" required
+                               aria-describedby="name-error" aria-invalid="false">
+                        <span class="field-error" id="name-error" aria-live="polite"></span>
                     </p>
 
                     <p>
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <input type="email" id="email" name="email"
+                               autocomplete="email" required
+                               aria-describedby="email-error" aria-invalid="false">
+                        <span class="field-error" id="email-error" aria-live="polite"></span>
                     </p>
 
                     <p>
                         <label for="pickup-date">Pickup date:</label>
-                        <input type="date" id="pickup-date" name="pickup-date" required>
+                        <input type="date" id="pickup-date" name="pickup-date"
+                               required aria-describedby="pickup-date-error"
+                               aria-invalid="false">
+                        <span class="field-error" id="pickup-date-error" aria-live="polite"></span>
                     </p>
 
                     <p>
                         <label for="request-type">Request type:</label>
-                        <select id="request-type" name="request-type" required>
+                        <select id="request-type" name="request-type" required
+                                aria-describedby="request-type-error request-type-note"
+                                aria-invalid="false">
                             <option value="">Select one</option>
                             <option value="preorder">Preorder</option>
                             <option value="question">General question</option>
                         </select>
+                        <span class="field-error" id="request-type-error" aria-live="polite"></span>
+                        <span class="field-note" id="request-type-note" aria-live="polite"></span>
                     </p>
 
                     <p>
                         <label for="item-details">Item details:</label>
-                        <textarea id="item-details" name="item-details" rows="5" required></textarea>
+                        <textarea id="item-details" name="item-details" rows="5"
+                                  minlength="10" required
+                                  aria-describedby="item-details-error"
+                                  aria-invalid="false"></textarea>
+                        <span class="field-error" id="item-details-error" aria-live="polite"></span>
                     </p>
 
                     <p>
@@ -67,8 +85,10 @@
                         <textarea id="allergy-notes" name="allergy-notes" rows="4"></textarea>
                     </p>
 
-                    <button type="submit">Send request</button>
+                    <button type="submit">Check request</button>
                 </fieldset>
+
+                <p id="form-status" class="form-status" aria-live="polite"></p>
             </form>
         </section>
     </main>

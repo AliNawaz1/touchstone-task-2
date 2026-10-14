@@ -235,3 +235,37 @@ footer a {
         justify-content: space-between;
     }
 }
+.favorite-button {
+    margin-top: 0.5rem;
+}
+
+#favorite-list {
+    padding-left: 1.5rem;
+}
+
+#favorite-list li {
+    margin: 0.25rem 0;
+}
+
+.field-error {
+    display: block;
+    min-height: 1.5em;
+    margin-top: 0.25rem;
+    color: var(--rust);
+    font-weight: bold;
+}
+
+.field-note {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--sage);
+}
+
+.form-status {
+    color: var(--sage);
+    font-weight: bold;
+}
+
+[aria-invalid="true"] {
+    border: 2px solid var(--rust);
+}
